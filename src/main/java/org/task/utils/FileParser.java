@@ -26,13 +26,12 @@ public final class FileParser {
     private static final Logger logger = Logger.getLogger(FileParser.class.getName());
 
     public static CSVParser createCSVParser(Path filePath) throws IOException {
-        return new CSVParser(Files.newBufferedReader(filePath),
-                CSVFormat.DEFAULT.builder()
-                        .setHeader()
-                        .setSkipHeaderRecord(true)
-                        .setIgnoreHeaderCase(true)
-                        .setTrim(true)
-                        .build());
+        return CSVFormat.DEFAULT.builder()
+                .setHeader()
+                .setSkipHeaderRecord(true)
+                .setIgnoreHeaderCase(true)
+                .setTrim(true)
+                .get().parse(Files.newBufferedReader(filePath));
     }
 
     public static Card parseCardFromRecord(CSVRecord csvRecord) {
