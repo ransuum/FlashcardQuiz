@@ -7,7 +7,6 @@ import com.fasterxml.jackson.databind.SerializationFeature;
 import com.fasterxml.jackson.datatype.jsr310.JavaTimeModule;
 import org.apache.commons.csv.CSVFormat;
 import org.apache.commons.csv.CSVPrinter;
-import org.apache.commons.lang3.StringUtils;
 import org.task.exception.FileParserException;
 import org.task.models.entity.Card;
 import org.task.models.entity.Deck;
@@ -29,7 +28,6 @@ import java.util.logging.Logger;
 public class ExportImportServiceImpl implements ExportImportService {
 
     private final ObjectMapper objectMapper;
-
     private static final Logger logger = Logger.getLogger(ExportImportServiceImpl.class.getName());
 
     public ExportImportServiceImpl() {
@@ -116,7 +114,6 @@ public class ExportImportServiceImpl implements ExportImportService {
                         StandardOpenOption.WRITE,
                         StandardOpenOption.TRUNCATE_EXISTING),
                 CSVFormat.DEFAULT.builder()
-                        .setHeader(CSV_HEADERS)
                         .build());
     }
 
