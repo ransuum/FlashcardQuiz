@@ -1,0 +1,5 @@
+2025-08-20 17:05:17.945242+03:00 jdbc[3]: exception
+org.h2.jdbc.JdbcSQLSyntaxErrorException: Syntax error in SQL statement "    INSERT [*]OR IGNORE INTO decks (name, description)\000a    VALUES ('Demo Deck', 'Демонстраційна колода для ознайомлення з додатком')\000a"; expected "INTO"; SQL statement:
+    INSERT OR IGNORE INTO decks (name, description)
+    VALUES ('Demo Deck', 'Демонстраційна колода для ознайомлення з додатком')
+ [42001-232]
