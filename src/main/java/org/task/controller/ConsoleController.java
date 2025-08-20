@@ -164,8 +164,6 @@ public class ConsoleController {
 
     private void saveDataOnExit() {
         try {
-            System.out.println("Saving data...");
-            // Data is automatically saved in DB, export can be added here
             System.out.println("Data saved successfully!");
         } catch (Exception e) {
             System.err.println("Error saving data: " + e.getMessage());
